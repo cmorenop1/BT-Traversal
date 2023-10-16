@@ -52,21 +52,21 @@ func CreateNode(value int) *Node {
 	}
 }
 
-func (node *Node) AddChildrenAt(parentValue int, left, right *Node) {
+func (node *Node) AddChildrenAt(targetValue int, left, right *Node) {
 	//base case 1
 	if node == nil {
 		return
 	}
 
 	//base case 2
-	if node.Value == parentValue {
+	if node.Value == targetValue {
 		node.Left = left
 		node.Right = right
 		return
 	}
 
-	node.Left.AddChildrenAt(parentValue, left, right)
-	node.Right.AddChildrenAt(parentValue, left, right)
+	node.Left.AddChildrenAt(targetValue, left, right)
+	node.Right.AddChildrenAt(targetValue, left, right)
 }
 
 func main() {
@@ -77,6 +77,11 @@ func main() {
 
 	fmt.Println("Pre-order traversal:")
 	tree.PreOrderTraversal()
+
+
+
+
+
 	fmt.Println("In-order traversal:")
 	tree.InOrderTraversal()
 	fmt.Println("Post-order traversal:")
