@@ -9,6 +9,7 @@ type Node struct {
 }
 
 func (node *Node) PreOrderTraversal() {
+	//base case
 	if node == nil {
 		return
 	}
@@ -20,6 +21,7 @@ func (node *Node) PreOrderTraversal() {
 }
 
 func (node *Node) InOrderTraversal() {
+	//base case
 	if node == nil {
 		return
 	}
@@ -31,6 +33,7 @@ func (node *Node) InOrderTraversal() {
 }
 
 func (node *Node) PostOrderTraversal() {
+	//base case
 	if node == nil {
 		return
 	}
@@ -50,10 +53,12 @@ func CreateNode(value int) *Node {
 }
 
 func (node *Node) AddChildrenAt(parentValue int, left, right *Node) {
+	//base case 1
 	if node == nil {
 		return
 	}
 
+	//base case 2
 	if node.Value == parentValue {
 		node.Left = left
 		node.Right = right
